@@ -1,0 +1,137 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #83a4d4, #b6fbff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    color: #333;
+    padding-top: 100px; /* Space for fixed header */
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 20px 0;
+    backdrop-filter: blur(5px);
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.header p {
+    margin: 0;
+    color: #e3e3e3;
+}
+
+/* Center the form container */
+.form-container {
+    width: 400px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15); /* Glassmorphism background */
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    animation: fadeIn 1s ease; /* Smooth fade-in animation */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form Toggle Buttons */
+.form-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-toggle button {
+    background: linear-gradient(135deg, #56ab2f, #a8e063); /* Gradient buttons */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s, transform 0.2s; /* Transition for hover effects */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Button shadow */
+}
+
+.form-toggle button:hover {
+    background: linear-gradient(135deg, #43a047, #76d275);
+    transform: translateY(-2px); /* Lift effect */
+}
+
+/* Form Styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form h2 {
+    font-size: 1.8em;
+    color: #4caf50;
+    margin-bottom: 15px;
+}
+
+.form label {
+    text-align: left;
+    width: 100%;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.form input:focus {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Focus shadow */
+}
+
+.form button {
+    background: linear-gradient(135deg, #4caf50, #81c784); /* Button gradient */
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1em;
+    width: 100%;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form button:hover {
+    background: linear-gradient(135deg, #388e3c, #66bb6a);
+    transform: translateY(-2px); /* Lift effect */
+}

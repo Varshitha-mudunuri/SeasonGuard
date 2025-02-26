@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f9ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #cce7ff;
+    border-bottom: 2px solid #99d3ff;
+}
+
+header h1 {
+    color: #0066cc;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+section h2 {
+    color: #0066cc;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.disease {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid #99d3ff;
+}
+
+.disease h3 {
+    color: #0066cc;
+    margin-bottom: 0.5rem;
+}
+
+.disease h4 {
+    color: #666;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.disease p {
+    margin-top: 0.3rem;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #cce7ff;
+    color: #333;
+    margin-top: 2rem;
+    border-top: 2px solid #99d3ff;
+}
+
+footer p {
+    font-size: 0.9rem;
+}

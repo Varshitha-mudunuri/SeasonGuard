@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Season Guard - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Season Guard</h1>
+        <p>Protect Yourself from Seasonal Diseases</p>
+    </header>
+
+    <div class="form-container" id="formContainer">
+        <div class="form-toggle">
+            <button id="loginBtn" onclick="toggleForms('login')">Login</button>
+            <button id="signupBtn" onclick="toggleForms('signup')">Sign Up</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="form">
+            <h2>Login</h2>
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" name="email" required>
+
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Sign-Up Form -->
+        <form id="signupForm" class="form" style="display: none;">
+            <h2>Sign Up</h2>
+            <label for="signupEmail">Email:</label>
+            <input type="email" id="signupEmail" name="email" required>
+
+            <label for="signupUsername">Username:</label>
+            <input type="text" id="signupUsername" name="username" required>
+
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" name="password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        // Toggle between Login and Signup forms
+        function toggleForms(formType) {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+    
+            if (formType === 'login') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            }
+        }
+    
+        // Handle Signup
+        document.getElementById('signupForm')?.addEventListener('submit', function (e) {
+            e.preventDefault();
+    
+            const email = document.getElementById('signupEmail').value.trim();
+            const username = document.getElementById('signupUsername').value.trim();
+            const password = document.getElementById('signupPassword').value;
+    
+            // Fetch existing users or initialize an empty array
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+    
+            // Check if the email is already registered
+            if (users.some(user => user.email === email)) {
+                alert("Email already registered. Please use a different email.");
+                return;
+            }
+    
+            // Add the new user to the users array
+            users.push({ email, username, password });
+    
+            // Update localStorage
+            localStorage.setItem('users', JSON.stringify(users));
+    
+            alert("Signup successful! Please log in.");
+            toggleForms('login'); // Show login form after successful signup
+        });
+    
+        // Handle Login
+        document.getElementById('loginForm')?.addEventListener('submit', function (e) {
+            e.preventDefault();
+    
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value;
+    
+            // Fetch users from localStorage
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+    
+            // Check if the entered credentials match any user
+            const user = users.find(user => user.email === email && user.password === password);
+    
+            if (user) {
+                alert("Login successful!");
+                window.location.href = "index.html"; // Redirect to index.html
+            } else {
+                alert("Invalid email or password. Please try again.");
+            }
+        });
+    </script>
+    
+</body>
+</html>
